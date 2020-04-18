@@ -1,5 +1,6 @@
 import React, { Component, Suspense } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import { withNamespaces, PhraseAppInitializer } from 'react-i18next-phraseapp';
 import logo from './logo.svg';
 import './App.css';
 
@@ -54,10 +55,11 @@ const Loader = () => (
   </div>
 );
 
-// here app catches the suspense from page in case translations are not yet loaded
 export default function App() {
   return (
     <Suspense fallback={<Loader />}>
+      { /* TODO: uncomment line below to login in PhraseApp and sync with */ }
+      {/* <PhraseAppInitializer /> */}
       <Page />
     </Suspense>
   );
