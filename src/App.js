@@ -35,9 +35,9 @@ function Page() {
         <Welcome />
         <div className="Container-button">
           <button className="Button-style" onClick={() => changeLanguage('en')}>en</button>
-          <button className="Button-style" onClick={() => changeLanguage('br')}>br</button>
+          <button className="Button-style" onClick={() => changeLanguage('pt')}>pt</button>
           <button className="Button-style" onClick={() => changeLanguage('es')}>es</button>
-          <button className="Button-style" onClick={() => changeLanguage('ch')}>ch</button>
+          <button className="Button-style" onClick={() => changeLanguage('zh')}>zh</button>
         </div>
       </div>
       <div className="App-intro">
@@ -55,12 +55,14 @@ const Loader = () => (
   </div>
 );
 
-export default function App() {
+function App() {
   return (
     <Suspense fallback={<Loader />}>
       { /* TODO: uncomment line below to login in PhraseApp and sync with */ }
-      {/* <PhraseAppInitializer /> */}
+      <PhraseAppInitializer />
       <Page />
     </Suspense>
   );
 }
+
+export default withNamespaces()(App);
